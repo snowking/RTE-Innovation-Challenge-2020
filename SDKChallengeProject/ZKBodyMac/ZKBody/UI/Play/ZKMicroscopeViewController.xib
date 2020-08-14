@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ZKMicroscopeViewController">
+            <connections>
+                <outlet property="controlBarEffectView" destination="wNZ-IA-o66" id="ze3-bK-VqM"/>
+                <outlet property="controlBarView" destination="8bw-KO-yax" id="0Kz-1c-aup"/>
+                <outlet property="focalLengthSliderBig" destination="Vhd-Sn-jOK" id="5b8-VH-yOC"/>
+                <outlet property="focalLengthSliderTiny" destination="jeZ-V6-3Mt" id="wYy-cn-tQ2"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="xSlider" destination="ekt-pM-2GS" id="nrb-aS-27C"/>
+                <outlet property="ySlider" destination="aLV-0y-mC3" id="dGh-Mu-Lf2"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="1000" height="500"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="8bw-KO-yax">
+                    <rect key="frame" x="187" y="30" width="626" height="261"/>
+                    <subviews>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="wNZ-IA-o66">
+                            <rect key="frame" x="0.0" y="0.0" width="626" height="85"/>
+                            <subviews>
+                                <button tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="KvE-Sd-s56">
+                                    <rect key="frame" x="276" y="19" width="74" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="74" id="73Q-gf-OU0"/>
+                                        <constraint firstAttribute="height" constant="48" id="sDj-H5-oEX"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="焦距微调" bezelStyle="shadowlessSquare" image="icon_ft" imagePosition="above" alignment="center" inset="2" id="kEh-d3-CY6">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="systemLight" size="12"/>
+                                    </buttonCell>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="controlButtonClicked:" target="-2" id="HLw-zV-Rxe"/>
+                                    </connections>
+                                </button>
+                                <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="qTA-oi-fkv">
+                                    <rect key="frame" x="162" y="19" width="74" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="5il-tV-kdT"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="Fm6-sz-dgS"/>
+                                        <constraint firstAttribute="width" constant="74" id="KQA-nj-WY3"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Kjn-D5-BgM"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="上下滑动" bezelStyle="shadowlessSquare" image="icon_ymove" imagePosition="above" alignment="center" inset="2" id="RiF-E5-pxw">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="label" size="12"/>
+                                    </buttonCell>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="controlButtonClicked:" target="-2" id="EeW-92-pJa"/>
+                                    </connections>
+                                </button>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="6h1-pW-6Tx">
+                                    <rect key="frame" x="48" y="19" width="74" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="74" id="Uai-oz-kZc"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="YY4-YV-yQS"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="e2W-qI-qji"/>
+                                        <constraint firstAttribute="height" constant="48" id="ge9-hT-aaB"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="左右滑动" bezelStyle="shadowlessSquare" image="icon_xmove" imagePosition="above" alignment="center" inset="2" id="Q4C-au-xcJ">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="systemLight" size="12"/>
+                                    </buttonCell>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="controlButtonClicked:" target="-2" id="8JV-dq-q5Y"/>
+                                    </connections>
+                                </button>
+                                <button tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="Akp-5d-Xds">
+                                    <rect key="frame" x="390" y="19" width="74" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="74" id="C7K-S2-ggd"/>
+                                        <constraint firstAttribute="height" constant="48" id="l6Y-WU-8Jk"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="qvT-Gd-wwB"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="焦距粗调" bezelStyle="shadowlessSquare" image="icon_fb" imagePosition="above" alignment="center" inset="2" id="0ub-LK-R0H">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="systemLight" size="12"/>
+                                    </buttonCell>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="controlButtonClicked:" target="-2" id="OW0-Uw-GBL"/>
+                                    </connections>
+                                </button>
+                                <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="9Fs-oa-giM">
+                                    <rect key="frame" x="504" y="19" width="74" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="KRC-Eh-x7A"/>
+                                        <constraint firstAttribute="width" constant="74" id="Si1-l9-ucb"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="rrc-Py-5iV"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="问题反馈" bezelStyle="shadowlessSquare" image="icon_problem" imagePosition="above" alignment="center" inset="2" id="ht5-N4-g7G">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="systemLight" size="12"/>
+                                    </buttonCell>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="controlButtonClicked:" target="-2" id="YH1-MB-FUk"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="qTA-oi-fkv" firstAttribute="top" secondItem="wNZ-IA-o66" secondAttribute="top" constant="18" id="02t-aX-aMc"/>
+                                <constraint firstItem="KvE-Sd-s56" firstAttribute="leading" secondItem="qTA-oi-fkv" secondAttribute="trailing" constant="40" id="80I-D1-8vZ"/>
+                                <constraint firstAttribute="bottom" secondItem="Akp-5d-Xds" secondAttribute="bottom" constant="19" id="ICT-MG-xpn"/>
+                                <constraint firstItem="KvE-Sd-s56" firstAttribute="centerX" secondItem="wNZ-IA-o66" secondAttribute="centerX" id="Jk5-Ze-dkM"/>
+                                <constraint firstItem="9Fs-oa-giM" firstAttribute="top" secondItem="wNZ-IA-o66" secondAttribute="top" constant="18" id="Kfd-XE-ad5"/>
+                                <constraint firstAttribute="bottom" secondItem="qTA-oi-fkv" secondAttribute="bottom" constant="19" id="Mrf-Bw-Z5q"/>
+                                <constraint firstItem="6h1-pW-6Tx" firstAttribute="top" secondItem="wNZ-IA-o66" secondAttribute="top" constant="18" id="PGq-GI-iTD"/>
+                                <constraint firstItem="9Fs-oa-giM" firstAttribute="leading" secondItem="Akp-5d-Xds" secondAttribute="trailing" constant="40" id="TKl-Bf-fZf"/>
+                                <constraint firstAttribute="bottom" secondItem="6h1-pW-6Tx" secondAttribute="bottom" constant="19" id="aKT-wh-cZ2"/>
+                                <constraint firstAttribute="bottom" secondItem="KvE-Sd-s56" secondAttribute="bottom" constant="19" id="cFy-tB-mUU"/>
+                                <constraint firstItem="Akp-5d-Xds" firstAttribute="leading" secondItem="KvE-Sd-s56" secondAttribute="trailing" constant="40" id="cRs-Hy-FKS"/>
+                                <constraint firstItem="Akp-5d-Xds" firstAttribute="top" secondItem="wNZ-IA-o66" secondAttribute="top" constant="18" id="mYl-7l-5xa"/>
+                                <constraint firstItem="KvE-Sd-s56" firstAttribute="top" secondItem="wNZ-IA-o66" secondAttribute="top" constant="18" id="nnw-o6-dZC"/>
+                                <constraint firstAttribute="bottom" secondItem="9Fs-oa-giM" secondAttribute="bottom" constant="19" id="oLl-gJ-ZWj"/>
+                                <constraint firstItem="qTA-oi-fkv" firstAttribute="leading" secondItem="6h1-pW-6Tx" secondAttribute="trailing" constant="40" id="qbO-eh-i6J"/>
+                                <constraint firstAttribute="height" constant="85" id="qjV-yy-W54"/>
+                            </constraints>
+                        </customView>
+                        <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ekt-pM-2GS">
+                            <rect key="frame" x="59" y="98" width="24" height="145"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="5ga-3Q-c89"/>
+                            </constraints>
+                            <sliderCell key="cell" alignment="left" maxValue="10" doubleValue="5" tickMarkPosition="right" numberOfTickMarks="10" sliderType="linear" id="kXp-HY-e4V"/>
+                        </slider>
+                        <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aLV-0y-mC3">
+                            <rect key="frame" x="180" y="98" width="24" height="145"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="EPx-yf-SmW"/>
+                            </constraints>
+                            <sliderCell key="cell" alignment="left" maxValue="10" doubleValue="5" tickMarkPosition="right" numberOfTickMarks="10" sliderType="linear" id="Jwt-wS-AcK"/>
+                        </slider>
+                        <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jeZ-V6-3Mt">
+                            <rect key="frame" x="303" y="98" width="24" height="145"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="e8h-D2-X2S"/>
+                            </constraints>
+                            <sliderCell key="cell" alignment="left" maxValue="1" doubleValue="0.01" tickMarkPosition="left" numberOfTickMarks="20" sliderType="linear" id="6aA-o3-DR9"/>
+                        </slider>
+                        <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vhd-Sn-jOK">
+                            <rect key="frame" x="421" y="98" width="24" height="145"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="jKS-9P-CN6"/>
+                            </constraints>
+                            <sliderCell key="cell" alignment="left" maxValue="6" doubleValue="3" tickMarkPosition="right" numberOfTickMarks="6" sliderType="linear" id="824-A1-dsZ"/>
+                        </slider>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Vhd-Sn-jOK" firstAttribute="leading" secondItem="jeZ-V6-3Mt" secondAttribute="trailing" constant="99" id="7Md-tM-4de"/>
+                        <constraint firstItem="wNZ-IA-o66" firstAttribute="leading" secondItem="8bw-KO-yax" secondAttribute="leading" id="C0e-Am-M8K"/>
+                        <constraint firstAttribute="trailing" secondItem="wNZ-IA-o66" secondAttribute="trailing" id="Eqt-UY-Wuc"/>
+                        <constraint firstItem="aLV-0y-mC3" firstAttribute="leading" secondItem="ekt-pM-2GS" secondAttribute="trailing" constant="99" id="GqA-fR-YdT"/>
+                        <constraint firstItem="jeZ-V6-3Mt" firstAttribute="leading" secondItem="aLV-0y-mC3" secondAttribute="trailing" constant="99" id="HMQ-Lz-wky"/>
+                        <constraint firstItem="jeZ-V6-3Mt" firstAttribute="centerX" secondItem="8bw-KO-yax" secondAttribute="centerX" id="HS7-YQ-ZBk"/>
+                        <constraint firstItem="wNZ-IA-o66" firstAttribute="top" secondItem="Vhd-Sn-jOK" secondAttribute="bottom" constant="16" id="JD4-wE-GNT"/>
+                        <constraint firstItem="wNZ-IA-o66" firstAttribute="top" secondItem="ekt-pM-2GS" secondAttribute="bottom" constant="16" id="Qr6-R9-l5b"/>
+                        <constraint firstAttribute="bottom" secondItem="wNZ-IA-o66" secondAttribute="bottom" id="asZ-O7-vNf"/>
+                        <constraint firstItem="wNZ-IA-o66" firstAttribute="top" secondItem="aLV-0y-mC3" secondAttribute="bottom" constant="16" id="gAA-Kl-Jg4"/>
+                        <constraint firstItem="wNZ-IA-o66" firstAttribute="top" secondItem="jeZ-V6-3Mt" secondAttribute="bottom" constant="16" id="vzY-4J-UQd"/>
+                        <constraint firstAttribute="height" constant="261" id="xHG-YT-HzP"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8bw-KO-yax" secondAttribute="trailing" constant="187" id="GH7-vA-YTv"/>
+                <constraint firstItem="8bw-KO-yax" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="187" id="lAi-uR-GUd"/>
+                <constraint firstAttribute="bottom" secondItem="8bw-KO-yax" secondAttribute="bottom" constant="30" id="lXU-wA-IXe"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="icon_fb" width="28" height="28"/>
+        <image name="icon_ft" width="28" height="28"/>
+        <image name="icon_problem" width="28" height="28"/>
+        <image name="icon_xmove" width="28" height="28"/>
+        <image name="icon_ymove" width="28" height="28"/>
+    </resources>
+</document>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ZKProjectsListViewController">
+            <connections>
+                <outlet property="collectionView" destination="YOd-Ng-E0b" id="jnM-OF-o9J"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="1000" height="550"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXT-Ua-rHB">
+                    <rect key="frame" x="0.0" y="0.0" width="1000" height="550"/>
+                    <clipView key="contentView" id="ign-s2-exO">
+                        <rect key="frame" x="1" y="1" width="998" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView selectable="YES" id="YOd-Ng-E0b">
+                                <rect key="frame" x="0.0" y="0.0" width="998" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="28" minimumLineSpacing="28" id="l2V-Tm-xHC">
+                                    <size key="itemSize" width="179" height="251"/>
+                                    <size key="headerReferenceSize" width="0.0" height="80"/>
+                                    <size key="footerReferenceSize" width="0.0" height="40"/>
+                                    <edgeInsets key="sectionInset" left="100" right="100" top="0.0" bottom="0.0"/>
+                                </collectionViewFlowLayout>
+                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="-2" id="QzH-6l-zjp"/>
+                                    <outlet property="delegate" destination="-2" id="maC-Pn-vV5"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="edS-2U-3OF">
+                        <rect key="frame" x="1" y="144" width="233" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="x8U-kc-Mtc">
+                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="eXT-Ua-rHB" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="IVU-Di-wSm"/>
+                <constraint firstItem="eXT-Ua-rHB" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="f0k-7a-8Xy"/>
+                <constraint firstAttribute="trailing" secondItem="eXT-Ua-rHB" secondAttribute="trailing" id="olt-X7-aUK"/>
+                <constraint firstAttribute="bottom" secondItem="eXT-Ua-rHB" secondAttribute="bottom" id="spt-m0-PmQ"/>
+            </constraints>
+            <point key="canvasLocation" x="141" y="154"/>
+        </customView>
+    </objects>
+</document>

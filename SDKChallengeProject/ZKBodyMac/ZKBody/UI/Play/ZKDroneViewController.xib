@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ZKDroneViewController">
+            <connections>
+                <outlet property="FPVSwitch" destination="XfP-z7-xBr" id="G8Z-Sj-URN"/>
+                <outlet property="autoCruiseSwitch" destination="jL9-OR-RRA" id="orp-AH-KIC"/>
+                <outlet property="focalLengthSlider" destination="Hnq-CQ-k45" id="8zS-oq-OuP"/>
+                <outlet property="gimbalSlider" destination="eTJ-n2-NVz" id="8xS-eD-fSB"/>
+                <outlet property="howToPlayButton" destination="xZH-iP-dAd" id="i4Z-Kf-6rF"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="virtualSwitch" destination="39f-ng-1Yo" id="Waa-VO-kkV"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xZH-iP-dAd">
+                    <rect key="frame" x="393" y="183" width="73" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="PyZ-Je-Nyx"/>
+                        <constraint firstAttribute="height" constant="16" id="lz5-J7-YHW"/>
+                    </constraints>
+                    <buttonCell key="cell" type="recessed" title="操作提示" bezelStyle="recessed" image="icon_notice" imagePosition="leading" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nct-Kh-AeN">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="miniSystemBold"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="controlHelpButtonClicked:" target="-2" id="UqN-rr-SXi"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="39f-ng-1Yo">
+                    <rect key="frame" x="391" y="159" width="75" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="cQm-wS-Xr2"/>
+                        <constraint firstAttribute="width" constant="70" id="etd-yy-1II"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="虚拟摇杆" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="yYm-Yb-CJf">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="menu" size="11"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jL9-OR-RRA">
+                    <rect key="frame" x="390" y="139" width="75" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="KjB-Wi-2pM"/>
+                        <constraint firstAttribute="width" constant="70" id="epO-wX-taG"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="自动巡航" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="smN-fC-YBC">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="menu" size="11"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XfP-z7-xBr">
+                    <rect key="frame" x="390" y="119" width="75" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="Gd2-IV-QHO"/>
+                        <constraint firstAttribute="width" constant="70" id="gwg-9P-8dY"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="FPV" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="cMO-pr-Q8F">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="menu" size="11"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="39f-ng-1Yo" secondAttribute="trailing" constant="16" id="0Ab-x3-T8M"/>
+                <constraint firstItem="xZH-iP-dAd" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="100" id="1tx-6l-bqY"/>
+                <constraint firstItem="jL9-OR-RRA" firstAttribute="top" secondItem="39f-ng-1Yo" secondAttribute="bottom" constant="6" symbolic="YES" id="Sja-9b-PbW"/>
+                <constraint firstAttribute="trailing" secondItem="xZH-iP-dAd" secondAttribute="trailing" constant="14" id="erp-nF-Yha"/>
+                <constraint firstItem="39f-ng-1Yo" firstAttribute="top" secondItem="xZH-iP-dAd" secondAttribute="bottom" constant="8" id="o66-LB-e5C"/>
+                <constraint firstAttribute="trailing" secondItem="XfP-z7-xBr" secondAttribute="trailing" constant="17" id="vhN-Ps-LhU"/>
+                <constraint firstItem="jL9-OR-RRA" firstAttribute="leading" secondItem="xZH-iP-dAd" secondAttribute="leading" id="vxT-6u-S6b"/>
+                <constraint firstItem="XfP-z7-xBr" firstAttribute="top" secondItem="jL9-OR-RRA" secondAttribute="bottom" constant="6" id="wIx-p2-UDB"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </customView>
+        <customView id="uae-sV-QsP">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <slider horizontalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hnq-CQ-k45" customClass="ZKSlider">
+                    <rect key="frame" x="50" y="17" width="24" height="125"/>
+                    <sliderCell key="cell" alignment="left" minValue="24" maxValue="48" doubleValue="24" tickMarkPosition="right" numberOfTickMarks="25" sliderType="linear" id="cU9-AA-bVY"/>
+                    <connections>
+                        <action selector="focalLengthChanged:" target="-2" id="e9I-OF-yH8"/>
+                    </connections>
+                </slider>
+                <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eTJ-n2-NVz" customClass="ZKSlider">
+                    <rect key="frame" x="82" y="34" width="24" height="91"/>
+                    <sliderCell key="cell" alignment="left" minValue="-90" maxValue="29" tickMarkPosition="left" numberOfTickMarks="30" sliderType="linear" id="dPx-EA-rSH"/>
+                    <connections>
+                        <action selector="gimbalSliderChanged:" target="-2" id="cVz-wr-Joc"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <constraints>
+                <constraint firstItem="eTJ-n2-NVz" firstAttribute="top" secondItem="uae-sV-QsP" secondAttribute="top" constant="37" id="2um-L7-N7p"/>
+                <constraint firstAttribute="bottom" secondItem="Hnq-CQ-k45" secondAttribute="bottom" constant="20" symbolic="YES" id="UWy-aq-vhE"/>
+                <constraint firstItem="Hnq-CQ-k45" firstAttribute="top" secondItem="uae-sV-QsP" secondAttribute="top" constant="20" symbolic="YES" id="abv-Xh-3rx"/>
+                <constraint firstItem="Hnq-CQ-k45" firstAttribute="leading" secondItem="uae-sV-QsP" secondAttribute="leading" constant="52" id="fNo-Ch-E4w"/>
+                <constraint firstItem="eTJ-n2-NVz" firstAttribute="leading" secondItem="Hnq-CQ-k45" secondAttribute="trailing" constant="8" id="nQv-MT-6Qv"/>
+                <constraint firstItem="Hnq-CQ-k45" firstAttribute="centerY" secondItem="eTJ-n2-NVz" secondAttribute="centerY" id="ufX-b1-e4M"/>
+            </constraints>
+            <point key="canvasLocation" x="-6" y="451"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="icon_notice" width="16" height="16"/>
+    </resources>
+</document>
